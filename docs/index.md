@@ -11,11 +11,11 @@ hero:
     alt: logo
   actions:
     - theme: brand
-      text: VitePress 笔记
-      link: /vitepress/start
+      text: VitePress 搭建&编写 笔记
+      link: /vitepress/build-write
     - theme: alt
-      text: Github Pages 笔记
-      link: /github-pages/start
+      text: 部署到 Github Pages 笔记
+      link: /github-pages/github-pages
 
 features:
   - title: 哔哩哔哩

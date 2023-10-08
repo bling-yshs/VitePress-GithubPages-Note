@@ -1,7 +1,10 @@
 # VitePress-GithubPages-Note
 
+[在线阅读](https://bling-yshs.github.io/VitePress-GithubPages-Note) 同时也是样例
+
 VitePress-GithubPages-Note，搭建 VitePress 并部署到 Github Pages 的新手踩坑笔记
 > 教程所用版本 `1.0.0-rc.20`
+> markdown 的内容（例如图片）可能会和具体编写的代码对不上，因为我这篇文档我后期调整过，见谅
 
 ## 前言
 
@@ -170,20 +173,21 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "VPGPN",
   description: "一篇 VitePress 新手笔记",
+  ignoreDeadLinks: [
+    /^https?:\/\/localhost/
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
       { text: 'VitePress', link: '/vitepress' }
     ],
-
     sidebar: [
       {
         text: '介绍',
         collapsed: false,
         items: [
           { text: '介绍', link: '/introduce/introduce' },
-
         ]
       },
       {
@@ -209,6 +213,7 @@ export default defineConfig({
 |---|---|---|
 |title|网页选项卡上的标题||
 |description|说明，不知道有啥用||
+|ignoreDeadLinks|忽略 md 文件中的指定的格式的死链接|可以直接为 true 来忽略所有死链接|
 |themeConfig|主题配置||
 |-nav|主页右上角的选项，link 代表跳转的地址||
 |-sidebar|侧边栏相关布局，小项目的话其实没必要拆的很细||
@@ -229,7 +234,7 @@ export default defineConfig({
 
 ### 添加 base
 
-在 `config.ts` 里加入 base，例如
+在 `config.ts` 里加入 base，代表你的初始地址，例如
 
 ```ts
 export default defineConfig({
@@ -320,3 +325,7 @@ jobs:
 ### 推送分支到仓库
 
 推送分支到仓库，他就会自动触发构建（前提是 deploy.yml 已经推送到 Github 过了）
+
+### 查看成果
+
+格式 [https://your-github-username.github.io/your-repo-name/](https://bling-yshs.github.io/VitePress-GithubPages-Note/)

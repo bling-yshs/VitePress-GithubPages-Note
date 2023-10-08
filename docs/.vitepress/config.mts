@@ -2,12 +2,12 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  ignoreDeadLinks: [
-    /^https?:\/\/localhost/
-  ],
   base: '/VitePress-GithubPages-Note/',
   title: "VPGPN",
   description: "一篇 VitePress 新手笔记",
+  ignoreDeadLinks: [
+    /^https?:\/\/localhost/
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -26,7 +26,8 @@ export default defineConfig({
         text: 'VitePress',
         collapsed: false,
         items: [
-          { text: '开始', link: '/vitepress/start' }
+          { text: '搭建环境和编写', link: '/vitepress/build-write' },
+          { text: '部署到 Github Pages', link: '/vitepress/github-pages' }
         ]
       }
     ],
