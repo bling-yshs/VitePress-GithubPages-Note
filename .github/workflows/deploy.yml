@@ -40,6 +40,7 @@ jobs:
         with:
           node-version: 18
           cache: pnpm # 默认是 npm，我用的 pnpm 所以改了
+          cache-dependency-path: docs/package-lock.json
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies
