@@ -318,3 +318,11 @@ jobs:
         uses: actions/deploy-pages@v2
 
 ```
+
+### 调整仓库 Page 设置
+
+"仓库设置 (Settings)" > "页面 (Pages)" > "Source" 选择 "Github Actions"
+
+### 推送分支到仓库
+
+推送分支到仓库，他就会自动触发构建（前提是 deploy.yml 已经推送到 Github 过了）
