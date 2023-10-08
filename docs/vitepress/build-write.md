@@ -161,20 +161,21 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "VPGPN",
   description: "一篇 VitePress 新手笔记",
+  ignoreDeadLinks: [
+    /^https?:\/\/localhost/
+  ],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
       { text: 'VitePress', link: '/vitepress' }
     ],
-
     sidebar: [
       {
         text: '介绍',
         collapsed: false,
         items: [
           { text: '介绍', link: '/introduce/introduce' },
-
         ]
       },
       {
@@ -200,6 +201,7 @@ export default defineConfig({
 |---|---|---|
 |title|网页选项卡上的标题||
 |description|说明，不知道有啥用||
+|ignoreDeadLinks|忽略 md 文件中的指定的格式的死链接|可以直接为 true 来忽略所有死链接|
 |themeConfig|主题配置||
 |-nav|主页右上角的选项，link 代表跳转的地址||
 |-sidebar|侧边栏相关布局，小项目的话其实没必要拆的很细||
