@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Not needed if lastUpdated is not enabled
-      - uses: pnpm/action-setup@v2 # 这行默认没写，因为我是 pnpm 所以打开了
+      # - uses: pnpm/action-setup@v2 # 这行默认没写，因为我是 pnpm 所以打开了
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
