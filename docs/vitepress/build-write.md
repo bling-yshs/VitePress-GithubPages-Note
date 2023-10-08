@@ -170,7 +170,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: 'VitePress', link: '/vitepress' }
+      { text: 'VitePress', link: '/vitepress/build-write' }
     ],
     sidebar: [
       {
