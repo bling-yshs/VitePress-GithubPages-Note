@@ -26,7 +26,7 @@ export default defineConfig({
         text: 'VitePress',
         collapsed: false,
         items: [
-          { text: '搭建环境和编写', link: '/vitepress/build-write' },
+          { text: '搭建和编写', link: '/vitepress/build-write' },
           { text: '部署到 Github Pages', link: '/vitepress/github-pages' }
         ]
       }
