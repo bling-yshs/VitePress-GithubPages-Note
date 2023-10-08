@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Not needed if lastUpdated is not enabled
-      - name: Install pnpm  # 官方的安装pnpm的脚本有点问题，所以我自己安装了
+      - name: Install pnpm # 官方的安装pnpm的脚本有点问题，所以我自己安装了
         run: |
           npm install pnpm -g
       - name: Setup Node
@@ -40,7 +40,7 @@ jobs:
         with:
           node-version: 18
           cache: pnpm # 默认是 npm，我用的 pnpm 所以改了
-          cache-dependency-path: docs/package-lock.json
+          cache-dependency-path: docs/pnpm-lock.yaml # pnpm 专属的 lock 位置
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies
