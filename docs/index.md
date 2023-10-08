@@ -7,7 +7,7 @@ hero:
   text: "一篇 VitePress & Github Pages 新手笔记"
   tagline: 简单易懂
   image:
-    src: /public/logo.jpg
+    src: /logo.jpg
     alt: logo
   actions:
     - theme: brand
@@ -21,14 +21,14 @@ features:
   - title: 哔哩哔哩
     details: 全球最大的 xx 交友网站
     icon: 
-      src: /public/bili.png
+      src: /bili.png
     link: https://space.bilibili.com/54987969
     linkText: 进入作者哔哩哔哩
   - title: Github
     details: 全球最大的 xx 交友网站
     icon: 
-      dark: /public/github-mark-white.svg
-      light: /public/github-mark.svg
+      dark: /github-mark-white.svg
+      light: /github-mark.svg
     link: https://github.com/bling-yshs
     linkText: 进入作者 Github
 ---

@@ -2,6 +2,9 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  ignoreDeadLinks: [
+    /^https?:\/\/localhost/
+  ],
   base: '/VitePress-GithubPages-Note/',
   title: "VPGPN",
   description: "一篇 VitePress 新手笔记",
@@ -11,7 +14,6 @@ export default defineConfig({
       { text: '主页', link: '/' },
       { text: 'VitePress', link: '/vitepress' }
     ],
-
     sidebar: [
       {
         text: '介绍',
