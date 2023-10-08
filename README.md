@@ -223,4 +223,4 @@ export default defineConfig({
 
 在我查看样例的时候，发现很多时候这种文档都是在项目底下新建一个名为 docs 的文件夹，然后让 Github Actions 自动部署的，我也试试吧
 
-###
+### 添加 base
