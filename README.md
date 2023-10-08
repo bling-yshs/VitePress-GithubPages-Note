@@ -59,23 +59,27 @@ pnpm add -D vitepress
 pnpm dlx vitepress init
 ```
 
-> 提示我 `Where should VitePress initialize the config?`
+> `Where should VitePress initialize the config?`
 
 这，直接当前目录把，他默认也是 `./`
 
-> 提示我 `Site title:`
+> `Site title:`
 
 网站标题，就这篇笔记吧，那就 VitePress-Note
 
-> 提示我 `Site description:`
+> `Site description:`
 
 感觉不重要，直接随便写点吧 A VitePress Note By Yshs
 
-> 提示我
->
 >  ```bash
 >  Theme:
 >  ● Default Theme (Out of the box, good-looking docs)
 >  ○ Default Theme + Customization
 >  ○ Custom Theme
 > ```
+
+主题的话，就默认推荐的吧
+
+> `Use TypeScript for config and theme files?`
+
+TypeScript，那肯定要加上
