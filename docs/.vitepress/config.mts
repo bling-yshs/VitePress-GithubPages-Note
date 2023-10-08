@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/VitePress-GithubPages-Note/',
   title: "VPGPN",
   description: "一篇 VitePress 新手笔记",
   themeConfig: {
