@@ -248,36 +248,27 @@ VitePress-GithubPages-Note 替换成你自己的 Github 仓库名
 
 在项目目录添加 `github/workflows/deplow.yml` 文件
 
-写入（该文件来自官方文档）
+写入配置，这里坑超级多，注意看注释
 
 ```yaml
-# Sample workflow for building and deploying a VitePress site to GitHub Pages
-#
 name: Deploy VitePress site to Pages
 
 on:
-  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
-  # using the `master` branch as the default branch.
   push:
     branches: [main] #这里改成自己的主分支名，有可能是 master
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  # Build job
+  # 构建 VitePress
   build:
     runs-on: ubuntu-latest
     steps:
@@ -285,25 +276,30 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Not needed if lastUpdated is not enabled
-      - uses: pnpm/action-setup@v2 # 这行默认没写，因为我是 pnpm 所以打开了
+      - name: Install pnpm # 官方的安装 pnpm 的脚本有点问题，所以我自己安装了
+        run: |
+          npm install pnpm -g
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: pnpm # 默认是 npm，我用的 pnpm 所以改了
+          cache-dependency-path: docs/pnpm-lock.yaml # pnpm 专属的 lock 文件的位置
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: pnpm install # 默认是 npm ci，我用的 pnpm 所以改了
+        working-directory: docs #记得修改工作目录
       - name: Build with VitePress
         run: |
-          pnpm docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build # 默认是 npm run docs:build，我用的 pnpm 所以改了
+          pnpm docs:build # 默认是 npm run docs:build，我用的 pnpm 所以改了
+        working-directory: docs #这里也是，记得修改工作目录
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: docs/.vitepress/dist
 
-  # Deployment job
+  # 上传到 Github Pages
   deploy:
     environment:
       name: github-pages
@@ -315,7 +311,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
 ```
 
 ### 调整仓库 Page 设置
