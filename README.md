@@ -298,7 +298,6 @@ jobs:
       - name: Build with VitePress
         run: |
           pnpm docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build # 默认是 npm run docs:build，我用的 pnpm 所以改了
-          touch docs/.vitepress/dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
