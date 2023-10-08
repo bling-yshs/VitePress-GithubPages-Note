@@ -85,7 +85,7 @@ ok，VitePress，启动！
 
 经典的 [http://localhost:5173/](http://localhost:5173/)
 
-![home](./img/home/index.png)
+![home](/public/home/index.png)
 
 看着还挺不错的，先改一改主页吧，我可是要写中文文档的
 
@@ -93,7 +93,7 @@ ok，VitePress，启动！
 
 我之前多少了解过一点这方面的知识，好像这种框架都是自动解析 markdown 文件来生成的网页，先来看看目录结构吧
 
-![structure](./img/structure.png)
+![structure](/public/structure.png)
 
 好随意！不过感觉应该也是可以自己创建文件夹分类的，所以问题不大
 
@@ -111,7 +111,7 @@ hero:
   text: "一篇 VitePress & Github Pages 新手笔记"
   tagline: 简单易懂
   image:
-    src: ./img/logo.jpg
+    src: /public/logo.jpg
     alt: logo
   actions:
     - theme: brand
@@ -125,14 +125,14 @@ features:
   - title: 哔哩哔哩
     details: 全球最大的 xx 交友网站
     icon: 
-      src: ./img/bili.png
+      src: /public/bili.png
     link: https://space.bilibili.com/54987969
     linkText: 进入作者哔哩哔哩
   - title: Github
     details: 全球最大的 xx 交友网站
     icon: 
-      dark: ./img/github-mark-white.svg
-      light: ./img/github-mark.svg
+      dark: /public/github-mark-white.svg
+      light: /public/github-mark.svg
     link: https://github.com/bling-yshs
     linkText: 进入作者 Github
 ---
@@ -143,12 +143,12 @@ features:
 |---|---|---|
 |layout|看了下文档好像指的是布局，有 doc，page，home 三种，这个是主页的 md，所以写的是 home||
 |hero|应该是一个代表顶层元素标签吧，也不知道为什么要取这个名字，应该是某种习惯||
-|name|最上方的蓝色标题，一般是项目名称|![name](./img/home/name.png)|
-|text|蓝色标题下方的大标题，一般是阐述项目的主要功能|![text](./img/home/text.png)|
-|tagline|大标题下方的小字，一般是阐述项目的特点|![tagline](./img/home/tagline.png)|
-|image|项目 logo，默认没有，我随便加个试试|![image](./img/home/image.png) 居然还有响应式 ![image-full](./img/home/image-full.png)|
-|action|主页的按钮，brand 是主按钮，alt 是次按钮|![actions](./img/home/actions.png)|
-|features|下面的卡片，太多了自己看吧，文档写的挺清楚的，都挺简单的|![features](./img/home/features.png)|
+|name|最上方的蓝色标题，一般是项目名称|![name](/public/home/name.png)|
+|text|蓝色标题下方的大标题，一般是阐述项目的主要功能|![text](/public/home/text.png)|
+|tagline|大标题下方的小字，一般是阐述项目的特点|![tagline](/public/home/tagline.png)|
+|image|项目 logo，默认没有，我随便加个试试|![image](/public/home/image.png) 居然还有响应式 ![image-full](/public/home/image-full.png)|
+|action|主页的按钮，brand 是主按钮，alt 是次按钮|![actions](/public/home/actions.png)|
+|features|下面的卡片，太多了自己看吧，文档写的挺清楚的，都挺简单的|![features](/public/home/features.png)|
 
 ## 修改主体
 

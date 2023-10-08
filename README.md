@@ -94,7 +94,7 @@ ok，VitePress，启动！
 
 经典的 [http://localhost:5173/](http://localhost:5173/)
 
-![home](./img/home/index.png)
+![home](/img/home/index.png)
 
 看着还挺不错的，先改一改主页吧，我可是要写中文文档的
 
