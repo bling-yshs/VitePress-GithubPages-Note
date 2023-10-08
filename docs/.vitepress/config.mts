@@ -8,6 +8,7 @@ export default defineConfig({
   ignoreDeadLinks: [
     /^https?:\/\/localhost/
   ],
+  head: [['link', { rel: 'icon', href: '/VitePress-GithubPages-Note/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

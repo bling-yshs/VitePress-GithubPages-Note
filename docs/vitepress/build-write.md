@@ -159,8 +159,10 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/VitePress-GithubPages-Note/',
   title: "VPGPN",
   description: "一篇 VitePress 新手笔记",
+  head: [['link', { rel: 'icon', href: '/VitePress-GithubPages-Note/favicon.ico' }]],
   ignoreDeadLinks: [
     /^https?:\/\/localhost/
   ],
@@ -182,7 +184,8 @@ export default defineConfig({
         text: 'VitePress',
         collapsed: false,
         items: [
-          { text: '开始', link: '/vitepress/start' }
+          { text: '搭建和编写', link: '/vitepress/build-write' },
+          { text: '部署到 Github Pages', link: '/vitepress/github-pages' }
         ]
       }
     ],
@@ -194,13 +197,13 @@ export default defineConfig({
     },
   }
 })
-
 ```
 
 |元素|说明|备注|
 |---|---|---|
 |title|网页选项卡上的标题||
 |description|说明，不知道有啥用||
+|head|这里的例子是添加网站图标||
 |ignoreDeadLinks|忽略 md 文件中的指定的格式的死链接|可以直接为 true 来忽略所有死链接|
 |themeConfig|主题配置||
 |-nav|主页右上角的选项，link 代表跳转的地址||
