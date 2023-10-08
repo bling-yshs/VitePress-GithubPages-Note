@@ -18,7 +18,7 @@
 
 ## 环境
 
-Node18+
+[Node.js](https://nodejs.org/en) 18 或以上版本
 
 ## 安装
 
@@ -107,25 +107,36 @@ ok，VitePress，启动！
 layout: home
 
 hero:
-  name: "VitePress-Note"
-  text: "A VitePress Note By Yshs"
-  tagline: My great project tagline
+  name: "VPGPN"
+  text: "一篇 VitePress & Github Pages 新手笔记"
+  tagline: 简单易懂
+  image:
+    src: ./img/logo.jpg
+    alt: logo
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: VitePress 笔记
+      link: /vitepress/start
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Github Pages 笔记
+      link: /github-pages/start
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 哔哩哔哩
+    details: 全球最大的 xx 交友网站
+    icon: 
+      src: ./img/bili.png
+    link: https://space.bilibili.com/54987969
+    linkText: 进入作者哔哩哔哩
+  - title: Github
+    details: 全球最大的 xx 交友网站
+    icon: 
+      dark: ./img/github-mark-white.svg
+      light: ./img/github-mark.svg
+    link: https://github.com/bling-yshs
+    linkText: 进入作者 Github
 ---
+
 ```
 
 |元素|说明|备注|
@@ -139,40 +150,60 @@ features:
 |action|主页的按钮，brand 是主按钮，alt 是次按钮|![actions](./img/home/actions.png)|
 |features|下面的卡片，太多了自己看吧，文档写的挺清楚的，都挺简单的|![features](./img/home/features.png)|
 
-## 修改网页外围信息
+## 修改主体
 
 也就是修改 `./vitepress/config.mts` 话说为什么是 `.mts`，没见过的格式
 
 ```ts
 import { defineConfig } from 'vitepress'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "VitePress-Note",
-  description: "A VitePress Note By Yshs",
+  title: "VPGPN",
+  description: "一篇 VitePress 新手笔记",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '主页', link: '/' },
+      { text: 'VitePress', link: '/vitepress' }
     ],
+
     sidebar: [
       {
-        text: 'Examples',
+        text: '介绍',
+        collapsed: false,
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '介绍', link: '/introduce/introduce' },
+
+        ]
+      },
+      {
+        text: 'VitePress',
+        collapsed: false,
+        items: [
+          { text: '开始', link: '/vitepress/start' }
         ]
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/bling-yshs/VitePress-GithubPages-Note' }
+    ],
+    search: {
+      provider: 'local',
+    },
   }
 })
+
 ```
 
 |元素|说明|备注|
 |---|---|---|
 |title|网页选项卡上的标题||
 |description|说明，不知道有啥用||
-|nav|主页右上角的选项，link 代表跳转的地址|说实话有点不懂怎么布局了，我是不是要把 Markdown 的每个部分拆开|
+|themeConfig|主题配置||
+|-nav|主页右上角的选项，link 代表跳转的地址||
+|-sidebar|侧边栏相关布局，小项目的话其实没必要拆的很细||
+|--collapsed|存在则让当前侧边栏可以折叠|false 代表默认展开，true 代表默认折叠|
+|--items|text: 每一个小项的标题；link: 到具体的本地 markdown 文件的地址|例如：`{ text: '开始', link: '/vitepress/start' }` 就是创建一个叫开始的选项，点击这个选项可以跳转到 `./vitepress/start.md` 文件生成的网页|
+|-socialLinks|右上角的外链图标||
+|-search|存在则显示搜索框||
