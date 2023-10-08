@@ -21,7 +21,7 @@ features:
   - title: 哔哩哔哩
     details: 全球最大的 xx 交友网站
     icon: 
-      src: /bili.png
+      src: /bilibili.svg
     link: https://space.bilibili.com/54987969
     linkText: 进入作者哔哩哔哩
   - title: Github
