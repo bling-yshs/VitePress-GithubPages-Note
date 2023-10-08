@@ -45,6 +45,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install dependencies
         run: pnpm install # 默认是 npm ci，我用的 pnpm 所以改了
+        working-directory: docs #记得修改工作目录
       - name: Build with VitePress
         run: |
           pnpm docs:build # or pnpm docs:build / yarn docs:build / bun run docs:build # 默认是 npm run docs:build，我用的 pnpm 所以改了
